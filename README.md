@@ -1,40 +1,40 @@
-# Шприцевой насос и коллектор фракций на основе шагового двигателя
+# Syringe pump and fraction collector based on stepper motor
 
 ![stepper](https://github.com/alexandervolikov/stepper/blob/main/img/stepper.jpg)
 
-Изначально задумывался как шприцевой насос, до функционал дополнительно расширен для использования в качестве коллектора фракций.
+Initially conceived as a syringe pump, the functionality has been further expanded for use as a fraction collector.
 
-Детали:
+Details:
 
-- шаговый двигатель nema 17hs4401s
-- arduino nano + драйвер drv8825
-- блок питания 12 V, 2.4 A
-- винтовая передача
-- конструкционный профиль 2040, стальной вал 8 мм
-- подшипник на 8 мм линейный и радиальный
-- муфта соединительная жесткая 5x8 мм
-- напечатанные на 3d принтера детали
+- stepper motor nema 17hs4401s
+- arduino nano + drv8825 driver
+- power supply 12 V, 2.4 A
+- screw gear
+- structural profile 2040, steel shaft 8 mm
+- bearing 8 mm linear and radial
+- coupling rigid 5x8 mm
+- 3d printed parts
 
-чертежи в папке scheme, модели деталей в папке 3d_print, схема соединения в hardware, прошивка для arduino в firmware, код управляющей программы для компьютера в gui
+drawings in the scheme folder, part models in the 3d_print folder, wiring diagram in hardware, firmware for arduino in firmware, control program code for a computer in gui
 
-GUI для компьютера основано на скрипте python, реализация с помощью библиотеки [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI)
+The GUI for the computer is based on a python script, implemented using the [PySimpleGUI] library (https://github.com/PySimpleGUI/PySimpleGUI)
 
 ![gui](https://github.com/alexandervolikov/stepper/blob/main/img/gui.png)
 
-Нужно ввести 
+Need to enter
 
-- название COM порта, к которому происходит подключение
-- скорость от 1 до 1000
-- шаг (1мм - 400 шагов)
-- сколько шагов нужно сделать
-- задержка между шагами в миллисекундах
+- the name of the COM port to which the connection is made
+- speed from 1 to 1000
+- step (1mm - 400 steps)
+- how many steps to take
+- delay between steps in milliseconds
 
-Нажать Start
+Press Start
 
-После чего запустится программа, она же сохранится в EEPROM память контроллера. Если подключить контроллер к питанию, начнётся записанная программа, тем самым, компьютер необязательно использовать непосредственно при работе.
+After that, the program will start, it will also be stored in the EEPROM memory of the controller. If you connect the controller to power, the recorded program will start, thus, the computer does not have to be used directly during operation.
 
-Схема и программа не имеет защиты от дурака, если ввести неверно, например, длину шага больше чем прибор может физически сделать, может что-то сломаться в устройстве
+The circuit and the program do not have foolproofing, if you enter it incorrectly, for example, the step length is greater than the device can physically do, something may break in the device
 
-В релизах - скомпилированные с помощью pyinstaller версии для windows и mac os
+In releases - compiled with pyinstaller versions for windows and mac os
 
 GNU General Public License v3.0
